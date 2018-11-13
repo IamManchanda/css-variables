@@ -1,5 +1,21 @@
 /* --- Variables --- */
 
+:root {
+  --primary-color: #3e84da;
+  --secondary-color: #daa33e;
+  --layout: 1fr 1fr 1fr;
+}
+
+nav {
+  --secondary-color: #666;
+}
+
+@media screen and (max-width: 640px) {
+  :root {
+    --layout: 1fr;
+  }
+}
+
 /* --- Main styles --- */
 
 h1,
@@ -17,18 +33,18 @@ nav.main-nav ul {
   width: 600px;
   margin: 30px auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: var(--layout);
   list-style-type: none;
   padding: 0;
   text-align: center;
 }
 
 nav a {
-  color: #daa33e;
+  color: var(--secondary-color);
 }
 
 .banner {
-  background: #3e84da;
+  background: var(--primary-color);
   color: #fff;
   font-size: 1.6em;
   text-align: center;
@@ -50,7 +66,7 @@ nav a {
 }
 
 .spot h2 {
-  color: #3e84da;
+  color: var(--primary-color);
 }
 
 .spot p {
@@ -60,7 +76,7 @@ nav a {
 }
 
 .content a {
-  color: #daa33e;
+  color: var(--secondary-color);
   font-size: 1.2em;
 }
 
@@ -71,7 +87,7 @@ footer {
 
 footer .blurbs {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: var(--layout);
   max-width: 760px;
   margin: 0 auto;
   grid-gap: 40px;
@@ -82,4 +98,12 @@ footer .blurb {
   color: #333;
   line-height: 2em;
   font-size: 0.9em;
+}
+
+.swatches span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    cursor: pointer;
 }
